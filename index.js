@@ -46,6 +46,8 @@ const postToInstagram = async () => {
         //     ],
         //     caption: 'Test Image', // nice caption (optional)
         // });
+        
+        console.log('📷 Upload photo to instagram')
 
         const todayDate = `${date.getFullYear()}년 ${String(date.getMonth() + 1).padStart(2, '0')}월 ${String(date.getDate()).padStart(2, '0')}일 ${dayToKorean(date.getDay())}`;
 
@@ -68,6 +70,7 @@ const postToInstagram = async () => {
     })
 }
 
-cron.schedule('0 8 * * *', () => {
+cron.schedule('* * * * *', () => {
+    console.log('⏰ Running a task every minute');
     postToInstagram();
-}).start();
+});
