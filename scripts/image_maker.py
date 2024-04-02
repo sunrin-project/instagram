@@ -49,5 +49,6 @@ def get_meal_json():
 def main():
     if not os.path.exists('./build/'):
         os.makedirs('./build/')
+    get_meal_json()
 
 main()

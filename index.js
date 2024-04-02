@@ -56,7 +56,7 @@ const postToInstagram = async () => {
             file: food,
             caption: `선린인터넷고등학교 오늘의 정보\n\n${todayDate}\n\n#선린고 #급식표 #선린투데이`, // nice caption (optional)
         }).then((media) => {
-            fetch('https://discord.com/api/webhooks/1223979097923780710/6JaMjmzwt7JUFuGHFcvcPUrTInQuo7zIcezgKZhsaZdqsTwHoBtprORw5hWCjrfsW5zq', {
+            fetch(process.env.DISCORD_WEBHOOK, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
