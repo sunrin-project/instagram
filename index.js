@@ -27,9 +27,10 @@ function dayToKorean(day) {
 
 const postToInstagram = async () => {
     const date = new Date();
-    exec('python image_maker.py', async (err, stdout, stderr) => {
+    console.log('🐍 Python 실행 요청됨')
+    exec('python scripts/image_maker.py', async (err, stdout, stderr) => {
+        console.log('🐍 Python 실행 됨')
         if (err) {
-            console.error(err)
             return
         }
         const instagram = new IgApiClient();
@@ -47,7 +48,7 @@ const postToInstagram = async () => {
         //     caption: 'Test Image', // nice caption (optional)
         // });
         
-        console.log('📷 Upload photo to instagram')
+        console.log('📷 인스타그램에 게시물 올리는 중')
 
         const todayDate = `${date.getFullYear()}년 ${String(date.getMonth() + 1).padStart(2, '0')}월 ${String(date.getDate()).padStart(2, '0')}일 ${dayToKorean(date.getDay())}`;
 
@@ -61,9 +62,10 @@ const postToInstagram = async () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    content: `✅ 급식 사진이 성공적으로 업로드 되었습니다! (**${todayDate}**)`
+                    content: `✅ 인스타그램에 게시물이 성공적으로 업로드 되었습니다! (**${todayDate}**)`
                 })
-            })
+            });
+            console.log('✅ 인스타그램에 게시물 성공적으로 업로드 됨')
         }).catch((err) => {
             console.error(err)
         });
@@ -71,6 +73,6 @@ const postToInstagram = async () => {
 }
 
 cron.schedule('* * * * *', () => {
-    console.log('⏰ Running a task every minute');
+    console.log('⏰ Cron job 실행됨');
     postToInstagram();
 });
