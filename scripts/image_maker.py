@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 
 def loadfont(fontsize):
-    ttf = '../assets/fonts/NanumSquareRoundEB.ttf'
+    ttf = './assets/fonts/NanumSquareRoundEB.ttf'
     return ImageFont.truetype(font=ttf, size=fontsize)
 
 weekdays = ['월', '화', '수', '목', '금']
@@ -18,7 +18,7 @@ def school_meal(lst, date, weekday):
     date_font = loadfont(36)
     date_font_color = 'rgb(196, 196, 196)'
 
-    image = Image.open('../assets/images/food_background.png')
+    image = Image.open('./assets/images/food_background.png')
     draw = ImageDraw.Draw(image)
 
     parsed_day = date.split('-')
@@ -38,7 +38,7 @@ def school_meal(lst, date, weekday):
 
 
 def get_meal_json():
-    with open('../json/meal.json', 'r', encoding='UTF8') as f:
+    with open('./json/meal.json', 'r', encoding='UTF8') as f:
         data = json.load(f)
         today = datetime.today()
         date = today.strftime('%Y-%m-%d')
