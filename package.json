@@ -14,5 +14,6 @@
     "request-promise": "^4.2.6"
   },
   "author": "iamfiro",
-  "license": "BSD 2-Clause"
+  "license": "BSD 2-Clause",
+  "type": "module"
 }
