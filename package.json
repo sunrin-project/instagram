@@ -1,5 +1,11 @@
 {
-  "description": "",
+  "name": "sunrin_today",
+  "description": "선린인고 급식 인스타에 자동화 게시하는 프로젝트",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "cron": "^3.1.6",
     "dotenv": "^16.4.5",
@@ -7,5 +13,7 @@
     "instagram-private-api": "^1.46.1",
     "node-cron": "^3.0.3",
     "request-promise": "^4.2.6"
-  }
+  },
+  "author": "iamfiro",
+  "license": "BSD 2-Clause"
 }
