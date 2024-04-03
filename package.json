@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "cron": "^3.1.6",
-    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "instagram-private-api": "^1.46.1",
     "node-cron": "^3.0.3",

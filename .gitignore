@@ -1,4 +1,4 @@
 /vscode
 /node_modules
-.env
+/config/config.js
 /build
