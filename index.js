@@ -32,6 +32,7 @@ const postToInstagram = async () => {
             console.log(err)
             return
         }
+        
         const instagram = new IgApiClient();
 
         instagram.state.generateDevice(config.instagram.username);
