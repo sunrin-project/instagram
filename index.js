@@ -5,22 +5,8 @@ import cron from 'node-cron';
 import { config } from './config/config.js';
 
 function dayToKorean(day) {
-    switch (day) {
-        case 0:
-            return '일요일'
-        case 1:
-            return '월요일'
-        case 2:
-            return '화요일'
-        case 3:
-            return '수요일'
-        case 4:
-            return '목요일'
-        case 5:
-            return '금요일'
-        case 6:
-            return '토요일'
-    }
+    const day = ['일', '월', '화', '수', '목', '금', '토'];
+    return day[day];
 }
 
 const postToInstagram = async () => {
