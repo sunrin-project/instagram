@@ -4,12 +4,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test:login": "node lib/test-login.js"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "cron": "^3.1.6",
     "express": "^4.19.2",
     "instagram-private-api": "^1.46.1",
+    "js-yaml": "^4.1.0",
     "node-cron": "^3.0.3",
     "request-promise": "^4.2.6",
     "sunrin-instagram-cli": "^1.1.0"
