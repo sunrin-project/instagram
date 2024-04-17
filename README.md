@@ -38,7 +38,9 @@ Contents
 
 `Python` - Pillow 라이브러리를 사용해 인스타그램에 업로드 할 이미지를 생성<br/>
 
-`Spotify` - ~~개발을 하기위한 나의 레드불~~
+`Youtube Music` - ~~개발을 하기위한 [iamfiro](https://github.com/iamfiro)의 레드불~~
+
+`Apple Music` - ~~개발을 할 때 [jwkwon0817](https://github.com/jwkwon0817)의 기력을 채워준 도구~~
 
 ---
 
