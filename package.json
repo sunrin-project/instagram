@@ -12,7 +12,7 @@
     "instagram-private-api": "^1.46.1",
     "node-cron": "^3.0.3",
     "request-promise": "^4.2.6",
-    "sunrin-instagram-cli": "^1.0.9"
+    "sunrin-instagram-cli": "^1.1.0"
   },
   "author": "iamfiro",
   "license": "BSD 2-Clause",
