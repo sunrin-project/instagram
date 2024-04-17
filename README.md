@@ -99,7 +99,7 @@ git clone https://github.com/sunrin-project/instagram.git
 
 ### Developers
 - <a href="https://github.com/iamfiro">@iamfiro</a> - 📦 이미지 업로드 기능, 스케줄러, CLI 개발
-- <a href="https://github.com/jwkwon0817">@jwkwon0817</a> - 📦 템플릿 기반 이미지 업로드
+- <a href="https://github.com/jwkwon0817">@jwkwon0817</a> - 📦 템플릿 기반 이미지 생성 (Python)
 
 ---
 
