@@ -31,6 +31,7 @@ const postToInstagram = async () => {
 
             const food = fs.readFileSync('build/meal.jpeg');
 
+            // 다중 이미지 업로드
             // await instagram.publish.album({
             //     items: [
             //         { width: 1024, height: 1024, file: food}
