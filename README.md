@@ -32,7 +32,7 @@ Contents
 - [Contact](#contact)
 
 
-### Stack
+### Stack <a href="stack"></a>
 
 `Javascript` - Instagram 이미지 업로드, Cron Job을 관리<br/>
 
@@ -42,7 +42,7 @@ Contents
 
 ---
 
-### Folder Structure
+### Folder Structure <a href="folder-structure"></a>
 
 **/assets** - 급식 이미지 생성에 필요한 이미지 템플릿이나 폰트등 다양한 에셋 파일이 있는 곳
 
@@ -59,7 +59,7 @@ README.md - 현재 보고있는 문서
 
 ---
 
-### Installation
+### Installation <a href="installation"></a>
 
 #### Git Clone
 
@@ -69,19 +69,19 @@ git clone https://github.com/sunrin-project/instagram.git
 
 ---
 
-### Dependencies
+### Dependencies <a href="dependencies"></a>
 `sunrin-instagram-cli` 를 이용하여 급식 데이터를 더 쉽게 관리합니다
 
 ---
 
-### Usage
+### Usage <a href="usage"></a>
 
 1. 프로젝트 클론 후 `npx sic init` 명령어로 프로젝트 config.js 파일 생성 (자세한 사용법은 [여기를 클릭](https://github.com/sunrin-project/instagram-cli/blob/main/README.md))
 2. `sunrin-instagram-cli` 라이브러리를 이용하여 급식 데이터 관리 (자세한 사용법은 [여기를 클릭](https://github.com/sunrin-project/instagram-cli/blob/main/README.md))
 3. `npm run start`로 인스타그램 스케줄러 실행
 ---
 
-### Trouble Shooting
+### Trouble Shooting <a href="troubleshooting"></a>
 
 <details>
   <summary>그냥 NEIS API 써서 자동화 하면 되는거 아닌가요?</summary>
@@ -97,12 +97,12 @@ git clone https://github.com/sunrin-project/instagram.git
 
 ---
 
-### Developers
+### Developers <a href="developer"></a>
 - <a href="https://github.com/iamfiro">@iamfiro</a> - 📦 이미지 업로드 기능, 스케줄러, CLI 개발
 - <a href="https://github.com/jwkwon0817">@jwkwon0817</a> - 📦 템플릿 기반 이미지 생성 (Python)
 
 ---
 
-### Contact
+### Contact <a href="contact"></a>
 <a href="https://www.instagram.com/sunrin_today/"><img style="border-radius: 4px" src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white&link=https://www.instagram.com/sunrin_today/"/></a>
 > **@sunrin_today** - 인스타그램
