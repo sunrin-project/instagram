@@ -18,6 +18,7 @@
   "homepage": "https://github.com/sunrin-project/instagram#readme",
   "dependencies": {
     "@types/node": "^20.14.11",
+    "instagram-private-api": "^1.46.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   }
