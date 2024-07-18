@@ -1,0 +1,6 @@
+{
+  "name": "@sunrin-project/shared",
+  "devDependencies": {
+    "prisma": "^5.17.0"
+  }
+}
