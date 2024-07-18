@@ -1,0 +1,24 @@
+{
+  "name": "@sunrin-project/service",
+  "version": "2.0.0",
+  "description": "선린인터넷프로젝트 급식 서비스",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunrin-project/instagram.git"
+  },
+  "author": "iamfiro",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sunrin-project/instagram/issues"
+  },
+  "homepage": "https://github.com/sunrin-project/instagram#readme",
+  "dependencies": {
+    "@types/node": "^20.14.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
+}
