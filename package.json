@@ -1,0 +1,26 @@
+{
+  "name": "sunrin-today",
+  "version": "1.0.0",
+  "description": "선린인고 급식 알림서비스",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build --verbose",
+    "dev:service": "ts-node-esm packages/service/src/index.ts"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "iamfiro",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "ts-node": "^10.9.2"
+  },
+  "ts-node": {
+    "esm": true
+  }
+}

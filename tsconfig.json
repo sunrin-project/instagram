@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "target": "es5",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "preserveValueImports": false,
+        "declaration": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src",
+        "outDir": "./build",
+    },
+    "files": [
+    ],
+    "references": [
+        {
+            "path": "./packages/common"
+        },
+        {
+            "path": "./packages/service"
+        },
+        {
+            "path": "./packages/discord"
+        }
+    ]
+  }
