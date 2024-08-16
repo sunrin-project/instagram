@@ -1,0 +1,22 @@
+{
+  "name": "sunrin_today",
+  "description": "선린인고 급식 인스타에 자동화 게시하는 프로젝트",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cron": "^3.1.6",
+    "express": "^4.19.2",
+    "instagram-private-api": "^1.46.1",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "request-promise": "^4.2.6",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "author": "iamfiro",
+  "license": "BSD 2-Clause",
+  "type": "module"
+}
