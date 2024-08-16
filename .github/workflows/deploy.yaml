@@ -1,0 +1,25 @@
+name: Deploy Sunrin Today
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Deploy to local server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.LOCAL_SERVER_HOST }}
+        username: ${{ secrets.LOCAL_SERVER_USERNAME }}
+        key: ${{ secrets.LOCAL_SERVER_SSH_KEY }}
+        port: ${{ secrets.LOCAL_SERVER_PORT }}
+        script: |
+          cd /home/sunrintoday/projects/sunrin-today/instagram
+          git pull origin main
+          pm2 restart SunrinToday
