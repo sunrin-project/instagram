@@ -27,7 +27,7 @@ const postToInstagram = async (delay) => {
         const instagram = new IgApiClient();
 
         instagram.state.generateDevice(config.instagram.username);
-    
+
         await instagram.account.login(config.instagram.username, config.instagram.password).catch((err) => {
  	    logger.error('Instagram login failed.');
             return;
@@ -42,12 +42,12 @@ const postToInstagram = async (delay) => {
             //     ],
             //     caption: 'Test Image', // nice caption (optional)
             // });
-            
+
             logger.info('Posting on Instagram.')
-	
-    
+
+
             const todayDate = `${date.getFullYear()}년 ${String(date.getMonth() + 1).padStart(2, '0')}월 ${String(date.getDate()).padStart(2, '0')}일 ${dayToKorean(date.getDay())}`;
-    
+
             await instagram.publish.photo({
                 file: food,
                 caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #급식표 #밥밥밥`, // nice caption (optional)
