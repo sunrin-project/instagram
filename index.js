@@ -5,6 +5,7 @@ import cron from 'node-cron';
 import { config } from './config/config.js';
 import fetch from 'node-fetch';
 import { logger } from './config/winston.js';
+import { notificationInstagramPost } from './lib/webhook.js';
 
 function dayToKorean(day) {
     const days = [ '일', '월', '화', '수', '목', '금', '토' ];
@@ -53,15 +54,7 @@ const postToInstagram = async (delay) => {
                 caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #급식표 #밥밥밥`, // nice caption (optional)
             }).then(() => {
                 if(config.discord.on) {
-                    fetch(config.discord.webhook, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            content: `✅ The post has been successfully uploaded to Instagram. (**${todayDate}**)`
-                        })
-                    });
+                    notificationInstagramPost();
                 }
                 logger.info('Successfully uploaded the post to Instagram.')
             }).catch((err) => {
