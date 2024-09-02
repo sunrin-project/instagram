@@ -8,7 +8,7 @@ import requests
 import sys
 
 def loadfont(fontsize):
-    ttf = './assets/fonts/NanumSquareRoundEB.ttf'
+    ttf = './assets/fonts/Pretendard-Bold.ttf'
     return ImageFont.truetype(font=ttf, size=fontsize)
 
 weekdays = ['월', '화', '수', '목', '금']

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e825f489-bb0e-42c4-ab0b-787f1a98ddb6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/manual.js" beforeDir="false" afterPath="$PROJECT_DIR$/manual.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Pretendard-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/NanumSquareRoundEB.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/image_maker.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/image_maker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/jwkwon0817/Programming/WebstormProjects/sunrin-today-instagram/assets/fonts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -36,6 +41,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/fonts" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -53,6 +63,7 @@
       <updated>1723770974378</updated>
       <workItem from="1723770975609" duration="1182000" />
       <workItem from="1723784535703" duration="1950000" />
+      <workItem from="1725282950366" duration="65000" />
     </task>
     <servers />
   </component>
