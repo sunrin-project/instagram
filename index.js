@@ -15,10 +15,8 @@ function dayToKorean(day) {
 const postToInstagram = async (delay) => {
     const date = new Date();
 
-    logger.info('Python has been requested to execute.');
-
     exec(`python3 scripts/image_maker.py ${delay}`, async (err, stdout, stderr) => {
-	logger.info('Python has been executed.');
+	    logger.info('Python has been executed.');
 
         if (err) {
             console.log(err)
@@ -30,7 +28,7 @@ const postToInstagram = async (delay) => {
         instagram.state.generateDevice(config.instagram.username);
 
         await instagram.account.login(config.instagram.username, config.instagram.password).catch((err) => {
- 	    logger.error('Instagram login failed.');
+ 	        logger.error('Instagram login failed.');
             return;
         }).then(async () => {
             logger.info('Successfully logged into Instagram.');
@@ -43,9 +41,6 @@ const postToInstagram = async (delay) => {
             //     ],
             //     caption: 'Test Image', // nice caption (optional)
             // });
-
-            logger.info('Posting on Instagram.')
-
 
             const todayDate = `${date.getFullYear()}년 ${String(date.getMonth() + 1).padStart(2, '0')}월 ${String(date.getDate()).padStart(2, '0')}일 ${dayToKorean(date.getDay())}`;
 
