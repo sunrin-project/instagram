@@ -3,7 +3,6 @@ import { exec } from 'child_process';
 import fs from 'fs';
 import cron from 'node-cron';
 import { config } from './config/config.js';
-import fetch from 'node-fetch';
 import { logger } from './config/winston.js';
 import { notificationInstagramPost } from './lib/webhook.js';
 
