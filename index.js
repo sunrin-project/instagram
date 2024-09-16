@@ -5,6 +5,7 @@ import cron from 'node-cron';
 import { config } from './config/config.js';
 import { logger } from './config/winston.js';
 import { notificationInstagramPost } from './lib/webhook.js';
+import { handleNotificationTomorrow } from './scripts/notificationTomorrow.js';
 
 function dayToKorean(day) {
     const days = [ '일', '월', '화', '수', '목', '금', '토' ];
@@ -64,6 +65,10 @@ cron.schedule(config.interval, () => {
     logger.info('Cron job has been executed.');
     postToInstagram(10);
 });
+
+cron.schedule('0 22 * * *', () => {
+    handleNotificationTomorrow();
+})
 
 export { postToInstagram };
 
