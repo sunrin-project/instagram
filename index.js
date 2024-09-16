@@ -59,6 +59,7 @@ const postToInstagram = async (delay) => {
 }
 
 
+
 cron.schedule(config.interval, () => {
     logger.info('Cron job has been executed.');
     postToInstagram(10);
