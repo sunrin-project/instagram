@@ -7,7 +7,6 @@ import { logger } from './config/winston.js';
 import { notificationInstagramPost } from './lib/webhook.js';
 import { handleNotificationTomorrow } from './scripts/notificationTomorrow.js';
 
-
 function isFirstWeekdayOfMonth(today) {
     
     // 이번 달의 첫 번째 날을 계산 (1일)
@@ -60,6 +59,15 @@ const postToInstagram = async (delay) => {
 
             if (isFirstWeekdayOfMonth(date)) {
                 exec('python3 scripts/rest_maker.py', async (err, stdout, stderr) => {
+                    if (stdout) {
+                        logger.info(stdout);
+                    }
+
+                    if (err) {
+                        logger.error(err);
+                        return;
+                    }
+
                     await instagram.publish.album({
                         items: [
                             { width: 1024, height: 1024, file: food},
@@ -73,7 +81,7 @@ const postToInstagram = async (delay) => {
                         logger.info('Successfully uploaded the post to Instagram.')
                     }).catch((err) => {
                         logger.error(err)
-                    });;
+                    });
                 })
             } else {
                 await instagram.publish.photo({
