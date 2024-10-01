@@ -68,10 +68,12 @@ const postToInstagram = async (delay) => {
                         return;
                     }
 
+                    const rest = fs.readFileSync('build/rest.jpeg');
+
                     await instagram.publish.album({
                         items: [
-                            { width: 1024, height: 1024, file: food},
-                            { width: 1024, height: 1024, file: fs.readFileSync('build/rest.jpeg') }
+                            { file: food},
+                            { file: rest }
                         ],
                         caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #급식표 #밥밥밥 #휴일`,
                     }).then(() => {
