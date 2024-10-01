@@ -14,7 +14,7 @@ def rest(lst, date, is_empty):
     H = 1024
 
     date_font = loadfont(36)
-    date_font_color = 'rgb(234, 92,81)'
+    date_font_color = 'rgb(196, 196, 196)'
 
     image = Image.open('./assets/images/rest_background.png')
     draw = ImageDraw.Draw(image)
