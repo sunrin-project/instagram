@@ -53,7 +53,7 @@ const postToInstagram = async (delay) => {
 
                 await instagram.publish.photo({
                     file: rest,
-                    caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #휴일`,
+                    caption: `${config.schoolName} 이달의 정보\n\n${todayDate}\n\n#${config.schoolName} #휴일`,
                 }).then(() => {
                     if(config.discord.on) {
                         notificationInstagramPost();
