@@ -47,6 +47,24 @@ const postToInstagram = async (delay) => {
 
         instagram.state.generateDevice(config.instagram.username);
 
+        if (isFirstWeekdayOfMonth(date)) {
+            exec('python3 scripts/rest_maker.py', async (err, stdout, stderr) => {
+                const rest = fs.readFileSync('build/rest.jpeg');
+
+                await instagram.publish.photo({
+                    file: rest,
+                    caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #휴일`,
+                }).then(() => {
+                    if(config.discord.on) {
+                        notificationInstagramPost();
+                    }
+                    logger.info('Successfully uploaded the post to Instagram.')
+                }).catch((err) => {
+                    logger.error(err)
+                });
+            })
+        }
+
         await instagram.account.login(config.instagram.username, config.instagram.password).catch((err) => {
  	        logger.error('Instagram login failed.');
             return;
@@ -68,24 +86,6 @@ const postToInstagram = async (delay) => {
             }).catch((err) => {
                 logger.error(err)
             });
-
-            if (isFirstWeekdayOfMonth(date)) {
-                exec('python3 scripts/rest_maker.py', async (err, stdout, stderr) => {
-                    const rest = fs.readFileSync('build/rest.jpeg');
-
-                    await instagram.publish.photo({
-                        file: rest,
-                        caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #휴일`,
-                    }).then(() => {
-                        if(config.discord.on) {
-                            notificationInstagramPost();
-                        }
-                        logger.info('Successfully uploaded the post to Instagram.')
-                    }).catch((err) => {
-                        logger.error(err)
-                    });
-                })
-            }
         });
     })
 }
