@@ -57,25 +57,25 @@ const postToInstagram = async (delay) => {
 
             const todayDate = `${date.getFullYear()}년 ${String(date.getMonth() + 1).padStart(2, '0')}월 ${String(date.getDate()).padStart(2, '0')}일 ${dayToKorean(date.getDay())}`;
 
+            await instagram.publish.photo({
+                file: food,
+                caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #급식표 #밥밥밥`, // nice caption (optional)
+            }).then(() => {
+                if(config.discord.on) {
+                    notificationInstagramPost();
+                }
+                logger.info('Successfully uploaded the post to Instagram.')
+            }).catch((err) => {
+                logger.error(err)
+            });
+
             if (isFirstWeekdayOfMonth(date)) {
                 exec('python3 scripts/rest_maker.py', async (err, stdout, stderr) => {
-                    if (stdout) {
-                        logger.info(stdout);
-                    }
-
-                    if (err) {
-                        logger.error(err);
-                        return;
-                    }
-
                     const rest = fs.readFileSync('build/rest.jpeg');
 
-                    await instagram.publish.album({
-                        items: [
-                            { file: food},
-                            { file: rest }
-                        ],
-                        caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #급식표 #밥밥밥 #휴일`,
+                    await instagram.publish.photo({
+                        file: rest,
+                        caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #휴일`,
                     }).then(() => {
                         if(config.discord.on) {
                             notificationInstagramPost();
@@ -85,18 +85,6 @@ const postToInstagram = async (delay) => {
                         logger.error(err)
                     });
                 })
-            } else {
-                await instagram.publish.photo({
-                    file: food,
-                    caption: `${config.schoolName} 오늘의 정보\n\n${todayDate}\n\n#${config.schoolName} #급식표 #밥밥밥`, // nice caption (optional)
-                }).then(() => {
-                    if(config.discord.on) {
-                        notificationInstagramPost();
-                    }
-                    logger.info('Successfully uploaded the post to Instagram.')
-                }).catch((err) => {
-                    logger.error(err)
-                });
             }
         });
     })
