@@ -9,7 +9,7 @@ export default async function postStories() {
   const path = "../build/meal.jpeg"
   const file = await fs.readFileAsync(path)
 
-  await ig.publish.story({
+  await instagram.publish.story({
     file
   })
 }
