@@ -6,6 +6,7 @@ import { config } from './config/config.js';
 import { logger } from './config/winston.js';
 import { notificationInstagramPost } from './lib/webhook.js';
 import { handleNotificationTomorrow } from './scripts/notificationTomorrow.js';
+import { postStories } from './scripts/stories.js'
 
 function isFirstWeekdayOfMonth(today) {
     
@@ -99,6 +100,10 @@ cron.schedule(config.interval, () => {
 
 cron.schedule('0 22 * * *', () => {
     handleNotificationTomorrow();
+})
+
+cron.schedule('10 12 * * 1-5', () => {
+	postStories()
 })
 
 export { postToInstagram };
